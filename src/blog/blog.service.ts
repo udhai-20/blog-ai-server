@@ -98,7 +98,7 @@ In conclusion, ${topic} represents an important area of knowledge that deserves 
     setInterval(async () => {
       console.log('⏰ Running Keep Alive Function...');
       try {
-        await axios.get('https://your-deployment-url.com/health-check');
+        await axios.get(' https://render.com/docs/bun-version/api/posts/health-check');
         console.log('✅ Keep Alive Request Successful');
       } catch (error) {
         console.error('❌ Keep Alive Request Failed:', error.message);
