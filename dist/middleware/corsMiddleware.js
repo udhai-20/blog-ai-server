@@ -12,7 +12,9 @@ let CorsMiddleware = class CorsMiddleware {
     use(req, res, next) {
         const origin = req.headers.origin || "https://gen-ai-blogs.netlify.app/";
         const domain = new URL(origin).hostname;
-        if (origin.startsWith('http://localhost:3000') || origin.startsWith('http://localhost:3001') || origin.startsWith('http://localhost:5173') || origin.startsWith('https://gen-ai-blogs.netlify.app/')) {
+        console.log('domain:', domain);
+        console.log('origin:', origin);
+        if (origin.startsWith('http://localhost:3000') || origin.startsWith('http://localhost:3001') || origin.startsWith('http://localhost:5173') || origin.startsWith('https://gen-ai-blogs.netlify.app')) {
             res.header('Access-Control-Allow-Origin', origin);
         }
         res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');

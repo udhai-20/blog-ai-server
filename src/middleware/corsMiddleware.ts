@@ -7,10 +7,10 @@ export class CorsMiddleware implements NestMiddleware {
     use(req: Request, res: Response, next: NextFunction) {
         const origin = req.headers.origin as string || "https://gen-ai-blogs.netlify.app/";
         const domain = new URL(origin).hostname; // Extracting the domain from the origin
-        // console.log('domain:', domain);
-        // console.log('origin:', origin);
+        console.log('domain:', domain);
+        console.log('origin:', origin);
 
-        if (origin.startsWith('http://localhost:3000') || origin.startsWith('http://localhost:3001') || origin.startsWith('http://localhost:5173') || origin.startsWith('https://gen-ai-blogs.netlify.app/')) {
+        if (origin.startsWith('http://localhost:3000') || origin.startsWith('http://localhost:3001') || origin.startsWith('http://localhost:5173') || origin.startsWith('https://gen-ai-blogs.netlify.app')) {
             res.header('Access-Control-Allow-Origin', origin);
         }
 
